@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat Fact Generator</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #e6e6fa, #d8bfd8);
+            color: #333;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            padding: 40px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            max-width: 500px;
+            width: 90%;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .container:hover {
+            transform: scale(1.03);
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #555;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            color: #444;
+        }
+
+        button {
+            padding: 15px 25px;
+            background-color: #7b68ee;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 25px;
+            font-size: 1em;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+            transition: background-color 0.3s ease;
+        }
+
+
+        button:hover {
+            background-color: #6a5acd;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Random Cat Facts</h1>
+        <p id="factDisplay">Click the button to get a fact!</p>
+        <button id="factButton">Get Cat Fact</button>
+    </div>
+    <script>
+        const catFacts = [
+            "Cats are crepuscular, which means they are most active during dawn and dusk.",
+            "A cat's nose print is unique, just like a human fingerprint.",
+            "Cats can jump up to six times their height.",
+            "The average cat sleeps for about 12-16 hours a day.",
+            "Cats have a third eyelid, called a nictitating membrane, that helps protect their eyes.",
+            "A group of cats is called a clowder.",
+            "Cats can make over 100 different vocalizations, while dogs can only make about 10.",
+            "The oldest known cat lived to be 38 years old.",
+            "Cats use their whiskers to help them navigate and sense their environment.",
+            "Cats have a specialized 'purr box' in their throat that can vibrate at a variety of frequencies, and its believed this can promote healing."
+        ];
+
+        document.getElementById('factButton').addEventListener('click', function() {
+            const randomIndex = Math.floor(Math.random() * catFacts.length);
+            document.getElementById('factDisplay').textContent = catFacts[randomIndex];
+        });
+    </script>
+</body>
+</html>
